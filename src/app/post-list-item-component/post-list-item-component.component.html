@@ -1,0 +1,15 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': getColor() === 'green',
+                'list-group-item-danger': getColor()=== 'red'}">
+<h3 class="pull-right">{{ Created_at | async | date: 'short' | uppercase }}</h3>
+    <div>
+        <h2 [ngStyle]="{color: getColor()}">{{ postName }}</h2>
+    </div>
+
+    <div>
+        <p>{{ postContenu }}</p>
+    </div>
+
+    <button class="btn btn-success" (click)="onPressLove()">Love IT</button>
+    <button class="btn btn-danger" (click)="onPressHate()">Hate</button>
+</li>
